@@ -1,0 +1,16 @@
+{
+  "disallowClassAttributeWithStaticValue": true,
+  "disallowIdAttributeWithStaticValue": true,
+  "disallowLegacyMixinCall": true,
+  "disallowMultipleLineBreaks": true,
+  "disallowSpaceAfterCodeOperator": true,
+  "disallowSpacesInsideAttributeBrackets": true,
+  "disallowTrailingSpaces": true,
+  "requireClassLiteralsBeforeAttributes": true,
+  "requireClassLiteralsBeforeIdLiterals": true,
+  "requireIdLiteralsBeforeAttributes": true,
+  "requireLineFeedAtFileEnd": true,
+  "validateAttributeQuoteMarks": "'",
+  "validateDivTags": true,
+  "validateIndentation": 2
+}
