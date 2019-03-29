@@ -1,0 +1,47 @@
+extends /layout-documentation
+
+block title
+  title Tikui
+
+block content
+  .container
+    h1 Tikui pattern library
+
+    h2 Use
+
+    p Import style using #[strong &lt;link&gt;] tag and replace #[strong {DOMAIN}] with the current domain:
+
+    p
+      em HTML
+      pre
+        code.language-html.
+          &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, shrink-to-fit=no&quot; /&gt;
+
+          &lt;link rel=&quot;stylesheet&quot; href=&quot;{DOMAIN}/tikui.css&quot; /&gt;
+
+    p
+      em Pug
+      pre
+        code.language-pug.
+          meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+
+          link(rel='stylesheet' href='{DOMAIN}/tikui.css')
+
+    h2 Documentation
+
+    p The Style have an #[a(href='http://atomicdesign.bradfrost.com' target='_blank') Atomic Design] organization.
+
+    .row
+      .col
+        .card
+          a.card-body(href='/atom/atom.html') Atoms
+      .col
+        .card
+          a.card-body(href='/molecule/molecule.html') Molecules
+      .col
+        .card
+          a.card-body(href='/organism/organism.html') Organisms
+    .row.mt-4.mb-4
+      .col
+        .card
+          a.card-body(href='/template/template.html') Templates
