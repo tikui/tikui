@@ -2,12 +2,33 @@
   "name": "tikui",
   "version": "1.0.0",
   "description": "Pattern Library tool",
-  "main": "src/index.pug",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/tikui/tikui.git"
+  "keywords": [
+    "ui",
+    "ui kit",
+    "design system",
+    "pattern library"
+  ],
+  "homepage": "https://github.com/tikui/tikui.git#readme",
+  "bugs": {
+    "url": "https://github.com/tikui/tikui/issues"
   },
+  "license": "MIT",
+  "author": {
+    "name": "Anthony Rey"
+  },
+  "contributors": [
+    {
+      "name": "Hippolyte Durix"
+    },
+    {
+      "name": "Jérémie Tisserand"
+    },
+    {
+      "name": "Arnaud Freismuth"
+    }
+  ],
+  "main": "src/index.pug",
+  "repository": "github:tikui/tikui",
   "scripts": {
     "serve": "concurrently npm:express:sass:cache npm:express:serve",
     "build": "concurrently npm:sass:build npm:pug:build npm:assets:build",
@@ -21,7 +42,6 @@
     "express:serve": "node tech/express.js",
     "express:sass:cache": "sass src:cache -s expanded --watch"
   },
-  "author": "Anthony Rey",
   "dependencies": {
     "bootstrap": "^4.2.1",
     "concurrently": "^4.1.0",
