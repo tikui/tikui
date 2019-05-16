@@ -52,17 +52,20 @@ app.use('/', express.static(srcDir));
 
 
 // Create server
-const reloadServer = reload(app);
 app.listen(3000, () => console.log('Styles are available at http://localhost:3000/'));
 
 // Watch on pug and css files
-watch([
-    srcDir,
-    cacheDir
-], {
-    recursive: true
-}, (evt, name) => {
-    if (typeof name === 'string' && !(name.match(/^(.+).scss$/))) {
-        reloadServer.reload();
-    }
+reload(app).then(function (reloadReturned) {
+    watch([
+        srcDir,
+        cacheDir
+    ], {
+        recursive: true
+    }, (evt, name) => {
+        if (typeof name === 'string' && !(name.match(/^(.+).scss$/))) {
+            reloadReturned.reload();
+        }
+    });
+}).catch(function (err) {
+    console.error('Reload could not start, could not start Tikui app', err);
 });
