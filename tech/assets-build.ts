@@ -1,13 +1,13 @@
 const copy = require('recursive-copy');
-const path = require('path');
-const fs = require('fs');
+import * as path from 'path';
+import * as fs from 'fs';
 
-const projectRoot = path.resolve(__dirname, '..');
+const projectRoot: string = path.resolve(__dirname, '..');
 
-const srcDir = path.resolve(projectRoot, 'src');
-const distDir = path.resolve(projectRoot, 'dist');
+const srcDir: string = path.resolve(projectRoot, 'src');
+const distDir: string = path.resolve(projectRoot, 'dist');
 
-const options = {
+const options: any = {
     overwrite: true,
     expand: true,
     dot: true,
