@@ -1,5 +1,7 @@
 # Tikui
 
+[![CircleCI](https://circleci.com/gh/tikui/tikui/tree/master.svg?style=svg)](https://circleci.com/gh/tikui/tikui/tree/master)
+
 Tikui is a MIT-licensed free software project allowing you to create a web pattern library.
 
 ## Prerequisites
