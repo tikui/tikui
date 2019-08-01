@@ -101,8 +101,8 @@ Inside `_button.scss`:
     background-color: #47a;
     padding: 5px;
     line-height: 1.5rem;
-    font-size: 1rem;
     color: #fff;
+    font-size: 1rem;
 }
 ```
 
