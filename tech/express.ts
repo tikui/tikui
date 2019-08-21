@@ -1,16 +1,18 @@
-const express = require('express');
-const cors = require('cors')
-const app = express();
+import * as express from 'express';
 const reload = require('reload');
-const watch = require('node-watch');
-const fs = require('fs');
-const path = require('path');
-const options = require('./options.dev');
+import watch from 'node-watch';
+import * as path from 'path';
+import * as fs from 'fs';
+import * as cors from 'cors';
+import { Request, Response, NextFunction } from 'express';
+import * as options from './options.dev';
 
-const projectRoot = path.resolve(__dirname, '..');
+const app = express();
 
-const srcDir = path.resolve(projectRoot, 'src');
-const cacheDir = path.resolve(projectRoot, 'cache');
+const projectRoot: string = path.resolve(__dirname, '..');
+
+const srcDir: string = path.resolve(projectRoot, 'src');
+const cacheDir: string = path.resolve(projectRoot, 'cache');
 
 app.use(cors());
 
@@ -23,21 +25,21 @@ if(!fs.existsSync(cacheDir)) {
 }
 
 // Compiled resources
-app.use(/^\/$/, (req, res) => {
+app.use(/^\/$/, (req: Request, res: Response) => {
     res.render('index.pug', options);
 });
 
-app.use(/^(.+)\/$/, (req, res) => {
+app.use(/^(.+)\/$/, (req: Request, res: Response) => {
     const pugUri = req.baseUrl.replace(/^\/(.+)$/, '$1/index.pug');
     res.render(pugUri, options);
 });
 
-app.use(/^\/(.+).html$/, (req, res) => {
+app.use(/^\/(.+).html$/, (req: Request, res: Response) => {
     const pugUri = req.baseUrl.replace(/^\/(.+).html$/, '$1.pug');
     res.render(pugUri, options);
 });
 
-app.use(/^\/(.+).css$/, (req, res, next) => {
+app.use(/^\/(.+).css$/, (req: Request, res: Response, next: NextFunction) => {
     const cssUri = req.baseUrl.replace(/^\/(.+).css/, '$1.css');
     const cssCacheUrl = path.resolve(cacheDir, cssUri);
     if(!fs.existsSync(cssCacheUrl)) {
@@ -55,17 +57,17 @@ app.use('/', express.static(srcDir));
 app.listen(3000, () => console.log('Styles are available at http://localhost:3000/'));
 
 // Watch on pug and css files
-reload(app).then(function (reloadReturned) {
+reload(app).then((reloadReturned: any) => {
     watch([
         srcDir,
         cacheDir
     ], {
         recursive: true
-    }, (evt, name) => {
+    }, (evt: any, name: any) => {
         if (typeof name === 'string' && !(name.match(/^(.+).scss$/))) {
             reloadReturned.reload();
         }
     });
-}).catch(function (err) {
+}).catch((err: any) => {
     console.error('Reload could not start, could not start Tikui app', err);
 });
