@@ -1,5 +1,6 @@
 import * as pug from 'pug';
 import * as path from 'path';
+import { pluginPath } from '../documentation-loader';
 
 interface ComponentVariables {
   markdown: string;
@@ -33,10 +34,13 @@ type Template = (variables: TemplateVariables) => string;
 type TemplateRender = (variables: TemplateRenderVariables) => string;
 type Code = (variables: CodeVariables) => string;
 
-const DOCUMENTATION_DIRECTORY = path.resolve(__dirname, '../../src/documentation');
+const DOCUMENTATION_PART_DIRECTORY = path.resolve(
+  pluginPath(),
+  'part',
+);
 
-export const component: Component = pug.compileFile(path.resolve(DOCUMENTATION_DIRECTORY, 'component.pug'));
-export const template: Template = pug.compileFile(path.resolve(DOCUMENTATION_DIRECTORY, 'template.pug'));
-export const componentRender: ComponentRender = pug.compileFile(path.resolve(DOCUMENTATION_DIRECTORY, 'component-render.pug'));
-export const templateRender: TemplateRender = pug.compileFile(path.resolve(DOCUMENTATION_DIRECTORY, 'template-render.pug'));
-export const code: Code = pug.compileFile(path.resolve(DOCUMENTATION_DIRECTORY, 'code.pug'));
+export const component: Component = pug.compileFile(path.resolve(DOCUMENTATION_PART_DIRECTORY, 'component.pug'));
+export const template: Template = pug.compileFile(path.resolve(DOCUMENTATION_PART_DIRECTORY, 'template.pug'));
+export const componentRender: ComponentRender = pug.compileFile(path.resolve(DOCUMENTATION_PART_DIRECTORY, 'component-render.pug'));
+export const templateRender: TemplateRender = pug.compileFile(path.resolve(DOCUMENTATION_PART_DIRECTORY, 'template-render.pug'));
+export const code: Code = pug.compileFile(path.resolve(DOCUMENTATION_PART_DIRECTORY, 'code.pug'));
