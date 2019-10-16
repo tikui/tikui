@@ -1,3 +1,6 @@
+<img src="/logo-horizontal.svg" width=300 height=auto>
+
+
 # Tikui
 
 [![CircleCI](https://circleci.com/gh/tikui/tikui/tree/master.svg?style=svg)](https://circleci.com/gh/tikui/tikui/tree/master)
