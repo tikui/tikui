@@ -5,12 +5,11 @@ import * as showdown from 'showdown';
 import * as escapeHtml from 'escape-html';
 
 import { DocUtils, Render, TemplateCode } from './Documentation';
+import { project } from '../tikui-loader';
 
 const html2pug = require('html2pug');
 
-const projectRoot: string = path.resolve(__dirname, '../..');
-
-const srcDir: string = path.resolve(projectRoot, 'src');
+const srcDir: string = path.resolve(project, 'src');
 
 const getCode = (filename: string) => (code: TemplateCode): string => {
   const templateFile = filename.replace(/.md$/, '.template.pug');

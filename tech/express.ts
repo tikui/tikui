@@ -8,13 +8,13 @@ import * as cors from 'cors';
 import { Request, Response, NextFunction } from 'express';
 import * as options from './options.dev';
 import { onLibResources } from './lib-resources';
+import { project } from './tikui-loader';
+import { onDocResources, sassRender } from './doc-resources';
 
 const app = express();
 
-const projectRoot: string = path.resolve(__dirname, '..');
-
-const srcDir: string = path.resolve(projectRoot, 'src');
-const cacheDir: string = path.resolve(projectRoot, 'cache');
+const srcDir: string = path.resolve(project, 'src');
+const cacheDir: string = path.resolve(project, 'cache');
 
 app.use(cors());
 
@@ -58,6 +58,26 @@ onLibResources((absoluteFrom, relativeTo) => app.use(
   path.join('/', relativeTo),
   express.static(absoluteFrom),
 ));
+
+onDocResources((absoluteFrom, relativeTo, type) => {
+  switch (type) {
+    case 'copy':
+      app.use(
+        path.join('/', relativeTo),
+        express.static(absoluteFrom),
+      );
+      break;
+    case 'scss':
+      app.use(
+        path.join('/', relativeTo),
+        (req: Request, res: Response) => {
+          res.set('Content-Type', 'text/css');
+          res.send(sassRender(absoluteFrom));
+        }
+      );
+      break;
+  }
+});
 
 // Create server
 app.listen(3000, () => console.log('Styles are available at http://localhost:3000/'));
