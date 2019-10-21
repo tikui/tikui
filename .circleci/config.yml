@@ -9,6 +9,7 @@ jobs:
       - checkout
       - run: npm -v
       - run: node -v
-      - run: npm install
+      - run: npm ci
       - run: npm run lint
       - run: npm audit
+      - run: npm run build
