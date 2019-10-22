@@ -1,4 +1,4 @@
-export type TemplateCode = (escaped: string, escapedPug: string) => string;
+export type Code = (escaped: string, escapedPug: string) => string;
 export type Render = (src: string) => string;
 export type Markdown = () => string;
 
@@ -8,7 +8,7 @@ export interface Options {
 }
 
 export interface DocUtils {
-  code: (code: TemplateCode) => string;
+  code: (code: Code) => string;
   render: (render: Render) => string;
   markdown: Markdown;
 }

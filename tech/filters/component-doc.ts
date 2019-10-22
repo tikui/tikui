@@ -1,8 +1,8 @@
 import { docUtils } from './doc-utils';
-import { Options, Render, TemplateCode } from './Documentation';
+import { Options, Render, Code } from './Documentation';
 import * as documentationTemplates from './documentation-templates';
 
-const templateCode: TemplateCode = (escaped, escapedPug): string => documentationTemplates.code({
+const templateCode: Code = (escaped, escapedPug): string => documentationTemplates.code({
   htmlCode: escaped,
   pugCode: escapedPug,
 });
