@@ -56,10 +56,10 @@ You can see a title `Button`, a content `A simple button` and two files to creat
 
 ```bash
 touch src/atom/button/button.render.pug
-touch src/atom/button/button.template.pug
+touch src/atom/button/button.code.pug
 ```
 
-> The file `button.render.pug` represents the render of your component and `button.template.pug` represents its code.
+> The file `button.render.pug` represents the render of your component and `button.code.pug` represents its code.
 
 Inside `button.render.pug`, you can add:
 
@@ -67,10 +67,10 @@ Inside `button.render.pug`, you can add:
 extends /layout
 
 block body
-    include button.template.pug
+    include button.code.pug
 ```
 
-And inside `button.template.pug`:
+And inside `button.code.pug`:
 
 ```pug
 button.tikui-button Button

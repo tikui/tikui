@@ -4,21 +4,21 @@ import * as pug from 'pug';
 import * as showdown from 'showdown';
 import * as escapeHtml from 'escape-html';
 
-import { DocUtils, Render, TemplateCode } from './Documentation';
+import { DocUtils, Render, Code } from './Documentation';
 import { project } from '../tikui-loader';
 
 const html2pug = require('html2pug');
 
 const srcDir: string = path.resolve(project, 'src');
 
-const getCode = (filename: string) => (code: TemplateCode): string => {
-  const templateFile = filename.replace(/.md$/, '.template.pug');
+const getCode = (filename: string) => (code: Code): string => {
+  const codeFile = filename.replace(/.md$/, '.code.pug');
 
-  if (!fs.existsSync(templateFile)) {
-    return 'Please provide a template file: ' + templateFile;
+  if (!fs.existsSync(codeFile)) {
+    return 'Please provide a code file: ' + codeFile;
   }
 
-  const rendered = pug.renderFile(templateFile, {pretty: true, basedir: srcDir});
+  const rendered = pug.renderFile(codeFile, {pretty: true, basedir: srcDir});
   const escaped = escapeHtml(rendered).trim();
   const renderedPug = html2pug(rendered, {fragment: true});
   const escapedPug = escapeHtml(renderedPug);
