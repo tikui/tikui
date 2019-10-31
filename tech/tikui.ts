@@ -19,13 +19,14 @@ const serve = () => {
   ]).then();
 };
 
+const ordered = (...commands: string[]) => commands.join(' && ');
+
 const build = () => {
   console.log('Building on dist directory.');
   rimraf.sync('dist');
   concurrently([
     SASS_BUILD,
-    PUG_BUILD,
-    ASSETS_BUILD,
+    ordered(ASSETS_BUILD, PUG_BUILD),
   ]).then();
 };
 

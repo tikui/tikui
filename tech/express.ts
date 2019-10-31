@@ -27,18 +27,26 @@ if (!fs.existsSync(cacheDir)) {
 }
 
 // Compiled resources
-app.use(/^\/$/, (req: Request, res: Response) => {
-  res.render('index.pug', options);
+const renderPage = (res: Response, next: NextFunction) => (filename: string) => {
+  const pugUri = filename + '.pug';
+  if(fs.existsSync(path.resolve(srcDir, pugUri))) {
+    return res.render(pugUri, options);
+  }
+  return next();
+};
+
+app.use(/^\/$/, (req: Request, res: Response, next: NextFunction) => {
+  renderPage(res, next)('index');
 });
 
-app.use(/^(.+)\/$/, (req: Request, res: Response) => {
-  const pugUri = req.baseUrl.replace(/^\/(.+)$/, '$1/index.pug');
-  res.render(pugUri, options);
+app.use(/^(.+)\/$/, (req: Request, res: Response, next: NextFunction) => {
+  const uri = req.baseUrl.replace(/^\/(.+)$/, '$1/index');
+  renderPage(res, next)(uri);
 });
 
-app.use(/^\/(.+).html$/, (req: Request, res: Response) => {
-  const pugUri = req.baseUrl.replace(/^\/(.+).html$/, '$1.pug');
-  res.render(pugUri, options);
+app.use(/^\/(.+).html$/, (req: Request, res: Response, next: NextFunction) => {
+  const uri = req.baseUrl.replace(/^\/(.+).html$/, '$1');
+  renderPage(res, next)(uri);
 });
 
 app.use(/^\/(.+).css$/, (req: Request, res: Response, next: NextFunction) => {
