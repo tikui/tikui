@@ -9,9 +9,17 @@ Tikui is a MIT-licensed free software project allowing you to create a web patte
 
 ## Prerequisites
 
-* [Node.js](https://nodejs.org)
+* [Node.js](https://nodejs.org) LTS version
 
 ## Development
+
+### Install dependencies
+
+After cloning the repository, please go to the root Tikui directory and run this command:
+
+```bash
+npm install
+```
 
 ### Serve
 
@@ -29,7 +37,7 @@ The source folder `src` follows the [Atomic Design](http://atomicdesign.bradfros
 
 To make your first component, we will take an atom example: a button.
 
-Inside `src/atom/atom.pug`, you have to describe your button by adding an inclusion:
+Inside `src/atom/atom.pug`, you have to describe your button by adding an inclusion at the end of the file:
 
 ```pug
 include:componentDoc(height=55) button/button.md
@@ -51,6 +59,8 @@ A simple button.
 ```
 
 Now, you can open [button](http://localhost:3000/atom.html#button) atom inside your browser (serve is needed).
+
+### Components Parts
 
 You can see a title `Button`, a content `A simple button` and two files to create:
 
@@ -76,12 +86,16 @@ And inside `button.code.pug`:
 button.tikui-button Button
 ```
 
+### Style 
+
 Then you can see a button on the browser. Now, you have to change the appearance of this button on `_atom.scss` and `_button.scss` files:
 
 ```bash
 touch src/atom/_atom.scss
 touch src/atom/button/_button.scss
 ```
+
+Before going into these two new files, edit the default scss file:
 
 Inside `tikui.scss`:
 
