@@ -78,8 +78,8 @@
     "stylelint-config-standard": "^19.0.0"
   },
   "engines": {
-    "node": ">=10.16.3",
-    "npm": ">=6.9.0"
+    "node": ">=12.13.0",
+    "npm": ">=6.12.0"
   },
   "husky": {
     "hooks": {
