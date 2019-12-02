@@ -41,12 +41,12 @@
   "dependencies": {
     "@types/concurrently": "^4.1.0",
     "@types/escape-html": "0.0.20",
-    "@types/node": "^12.12.5",
+    "@types/node": "^12.12.14",
     "@types/pug": "^2.0.4",
     "@types/rimraf": "^2.0.3",
     "@types/showdown": "^1.9.3",
-    "bootstrap": "^4.2.1",
-    "commander": "^4.0.0",
+    "bootstrap": "^4.4.1",
+    "commander": "^4.0.1",
     "concurrently": "^5.0.0",
     "escape-html": "^1.0.3",
     "html2pug": "^4.0.0",
@@ -56,10 +56,10 @@
     "pug-multiple-basedirs-plugin": "0.1.5",
     "recursive-copy": "^2.0.9",
     "rimraf": "^3.0.0",
-    "sass": "^1.23.3",
+    "sass": "^1.23.7",
     "showdown": "^1.9.1",
     "tikuidoc-tikui": "^1.0.0",
-    "typescript": "^3.6.4"
+    "typescript": "^3.7.2"
   },
   "devDependencies": {
     "@types/cors": "^2.8.6",
@@ -67,18 +67,18 @@
     "@types/sass": "^1.16.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "husky": "^3.0.9",
+    "husky": "^3.1.0",
     "node-watch": "^0.6.3",
     "pug-lint": "^2.6.0",
     "reload": "^3.0.3",
-    "stylelint": "^11.1.1",
+    "stylelint": "^12.0.0",
     "stylelint-config-concentric-order": "^3.5.0",
-    "stylelint-config-sass-guidelines": "^6.1.0",
+    "stylelint-config-sass-guidelines": "^6.2.0",
     "stylelint-config-scss": "^1.0.0-security",
     "stylelint-config-standard": "^19.0.0"
   },
   "engines": {
-    "node": ">=12.13.0",
+    "node": ">=12.13.1",
     "npm": ">=6.12.0"
   },
   "husky": {
