@@ -41,13 +41,13 @@
   "dependencies": {
     "@types/concurrently": "^4.1.0",
     "@types/escape-html": "0.0.20",
-    "@types/node": "^12.12.14",
+    "@types/node": "^12.12.17",
     "@types/pug": "^2.0.4",
     "@types/rimraf": "^2.0.3",
     "@types/showdown": "^1.9.3",
     "bootstrap": "^4.4.1",
     "commander": "^4.0.1",
-    "concurrently": "^5.0.0",
+    "concurrently": "^5.0.1",
     "escape-html": "^1.0.3",
     "html2pug": "^4.0.0",
     "prismjs": "^1.17.1",
@@ -59,7 +59,7 @@
     "sass": "^1.23.7",
     "showdown": "^1.9.1",
     "tikuidoc-tikui": "^1.0.0",
-    "typescript": "^3.7.2"
+    "typescript": "^3.7.3"
   },
   "devDependencies": {
     "@types/cors": "^2.8.6",
