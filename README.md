@@ -58,7 +58,7 @@ In `button.md` file we can add:
 A simple button.
 ```
 
-Now, you can open [button](http://localhost:3000/atom.html#button) atom inside your browser (serve is needed).
+Now, you can open the [button](http://localhost:3000/atom/atom.html#button) from the atom menu, inside your browser (serve is needed).
 
 ### Components Parts
 
