@@ -1,6 +1,6 @@
 {
   "name": "tikui",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Pattern Library tool",
   "keywords": [
     "ui",
@@ -38,21 +38,21 @@
     "sass:lint:fix": "stylelint \"src/**/*.scss\" --syntax scss --fix"
   },
   "dependencies": {
-    "@tikui/core": "^1.0.0",
-    "tikuidoc-tikui": "^1.0.1"
+    "@tikui/core": "^1.0.1",
+    "tikuidoc-tikui": "^1.0.2"
   },
   "devDependencies": {
-    "concurrently": "^5.0.2",
-    "husky": "^3.1.0",
+    "concurrently": "^5.1.0",
+    "husky": "^4.2.3",
     "pug-lint": "^2.6.0",
-    "stylelint": "^12.0.1",
-    "stylelint-config-concentric-order": "^3.5.0",
-    "stylelint-config-sass-guidelines": "^6.2.0",
+    "stylelint": "^13.3.0",
+    "stylelint-config-concentric-order": "^4.0.0",
+    "stylelint-config-sass-guidelines": "^7.0.0",
     "stylelint-config-scss": "^1.0.0-security",
-    "stylelint-config-standard": "^19.0.0"
+    "stylelint-config-standard": "^20.0.0"
   },
   "engines": {
-    "node": ">=12.14.1",
+    "node": ">=12.16.1",
     "npm": ">=6.13.4"
   },
   "husky": {
