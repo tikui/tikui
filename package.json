@@ -38,14 +38,14 @@
     "sass:lint:fix": "stylelint \"src/**/*.scss\" --syntax scss --fix"
   },
   "dependencies": {
-    "@tikui/core": "^1.1.0",
+    "@tikui/core": "^1.2.0",
     "tikuidoc-tikui": "^1.1.0"
   },
   "devDependencies": {
     "concurrently": "^5.3.0",
-    "husky": "^4.3.6",
+    "husky": "^4.3.8",
     "pug-lint": "^2.6.0",
-    "stylelint": "^13.8.0",
+    "stylelint": "^13.9.0",
     "stylelint-config-concentric-order": "^4.0.1",
     "stylelint-config-sass-guidelines": "^7.1.0",
     "stylelint-config-scss": "^1.0.0-security",
