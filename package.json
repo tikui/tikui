@@ -35,7 +35,8 @@
     "lint": "concurrently npm:sass:lint npm:pug:lint",
     "pug:lint": "pug-lint src",
     "sass:lint": "stylelint \"src/**/*.scss\" --syntax scss",
-    "sass:lint:fix": "stylelint \"src/**/*.scss\" --syntax scss --fix"
+    "sass:lint:fix": "stylelint \"src/**/*.scss\" --syntax scss --fix",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@tikui/core": "^1.3.0",
@@ -54,10 +55,5 @@
   "engines": {
     "node": ">=12.16.1",
     "npm": ">=6.13.4"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint"
-    }
   }
 }
