@@ -1,17 +1,13 @@
 extends /documentation/layout-atomic
 
+include /documentation/mixin
+
 block header
   block vars
     -let active='';
-    -const classActive = current => current === active ? 'active' : null;
-  nav.navbar.navbar-dark.bg-dark.navbar-expand-md
-    a.navbar-brand(href='/') Tikui
-    ul.navbar-nav.mr-auto
-      li.nav-item(class=classActive('atom'))
-        a.nav-link(href='/atom/atom.html') Atoms
-      li.nav-item(class=classActive('molecule'))
-        a.nav-link(href='/molecule/molecule.html') Molecules
-      li.nav-item(class=classActive('organism'))
-        a.nav-link(href='/organism/organism.html') Organisms
-      li.nav-item(class=classActive('template'))
-        a.nav-link(href='/template/template.html') Templates
+    -const isActive = current => current === active;
+  +tikui-navbar('/', 'Tikui')
+    +tikui-navbar-item('/atom/atom.html', 'Atoms', isActive('atom'))
+    +tikui-navbar-item('/molecule/molecule.html', 'Molecules', isActive('molecule'))
+    +tikui-navbar-item('/organism/organism.html', 'Organisms', isActive('organism'))
+    +tikui-navbar-item('/template/template.html', 'Templates', isActive('template'))
