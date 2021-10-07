@@ -18,7 +18,6 @@ jobs:
         run: |
           npm ci
           npm run lint
-          npm audit --production
           npm run build
         env:
           CI: true
