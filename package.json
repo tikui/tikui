@@ -1,6 +1,6 @@
 {
   "name": "tikui",
-  "version": "1.4.0",
+  "version": "2.0.0",
   "description": "Pattern Library tool",
   "keywords": [
     "ui",
@@ -39,8 +39,8 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@tikui/core": "^1.4.0",
-    "tikuidoc-tikui": "^2.0.0"
+    "@tikui/core": "^1.5.1",
+    "tikuidoc-tikui": "^3.0.0"
   },
   "devDependencies": {
     "concurrently": "^6.3.0",
