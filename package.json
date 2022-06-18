@@ -34,26 +34,28 @@
     "build": "tikui-core build",
     "lint": "concurrently npm:sass:lint npm:pug:lint",
     "pug:lint": "pug-lint src",
-    "sass:lint": "stylelint \"src/**/*.scss\" --syntax scss",
-    "sass:lint:fix": "stylelint \"src/**/*.scss\" --syntax scss --fix",
+    "sass:lint": "stylelint \"src/**/*.scss\"",
+    "sass:lint:fix": "stylelint \"src/**/*.scss\"",
     "prepare": "husky install"
   },
   "dependencies": {
-    "@tikui/core": "^1.5.1",
+    "@tikui/core": "^1.5.2",
+    "@types/concurrently": "^7.0.0",
     "tikuidoc-tikui": "^3.0.0"
   },
   "devDependencies": {
-    "concurrently": "^6.3.0",
-    "husky": "^7.0.2",
+    "concurrently": "^7.2.2",
+    "husky": "^8.0.1",
+    "postcss-scss": "^4.0.4",
     "pug-lint": "^2.6.0",
-    "stylelint": "^13.13.1",
-    "stylelint-config-concentric-order": "^4.0.1",
-    "stylelint-config-sass-guidelines": "^8.0.0",
-    "stylelint-config-scss": "^1.0.0-security",
-    "stylelint-config-standard": "^22.0.0"
+    "stylelint": "^14.8.2",
+    "stylelint-config-concentric-order": "^5.0.0",
+    "stylelint-config-sass-guidelines": "^9.0.1",
+    "stylelint-config-standard": "^26.0.0",
+    "stylelint-config-standard-scss": "^4.0.0"
   },
   "engines": {
-    "node": ">=12.16.1",
-    "npm": ">=6.13.4"
+    "node": ">=16.15.1",
+    "npm": ">=8.11.0"
   }
 }
