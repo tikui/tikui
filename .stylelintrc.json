@@ -2,7 +2,9 @@
   "plugins": [
     "stylelint-scss"
   ],
+  "customSyntax": "postcss-scss",
   "extends": [
+    "stylelint-config-standard-scss",
     "stylelint-config-sass-guidelines",
     "stylelint-config-concentric-order"
   ],
