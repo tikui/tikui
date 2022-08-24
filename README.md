@@ -2,9 +2,9 @@
 
 ![Tikui logo](./logo.svg)
 
-Tikui is a MIT-licensed free software project allowing you to create a web pattern library.
+[Tikui](https://www.tikui.org) is a MIT-licensed free software project allowing you to create a web pattern library.
 
-_Important note: Tikui can now be generated using [@tikui/cli](https://github.com/tikui/tikui-cli) command with `tikui generate tikui`. This is the reason why this repository will not have more updates and will not have the Tikui structure in the future._
+_Important note: Tikui can now be generated using [@tikui/cli](https://github.com/tikui/tikui-cli) command with `tikui generate tikui`. This is the reason why this repository no longer has the Tikui structure._
 
 ## Prerequisites
 
@@ -27,3 +27,5 @@ npm install
 ```
 
 Then follow the __README.md__ from the generated project to create your first component.
+
+More information about Tikui itself on [tikui.org](https://www.tikui.org).
